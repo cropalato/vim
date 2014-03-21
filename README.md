@@ -3,10 +3,12 @@ vim
 
 my .vim
 
-# what you need to install:
+# Pre install:
 * apt-get install puppet-common
 * gem install puppet-lint
 
 
-# Post install:
-* copy .vimrc_example to your home directory as .vimrc
+# Install:
+* git clone https://github.com/cropalato/vim.git ~/.vim
+* cat ~/.vim/.vimrc_example >> ~/.vimrc
+
