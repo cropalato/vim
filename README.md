@@ -9,6 +9,6 @@ my .vim
 
 
 # Install:
-* git clone https://github.com/cropalato/vim.git ~/.vim
+* git clone --recursive https://github.com/cropalato/vim.git ~/.vim
 * cat ~/.vim/.vimrc_example >> ~/.vimrc
 
