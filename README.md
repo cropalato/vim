@@ -6,6 +6,7 @@ my .vim
 # Pre install:
 * apt-get install puppet-common
 * gem install puppet-lint
+* need to install python-pylint python-pyflakes pep8
 
 
 # Install:
