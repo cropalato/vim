@@ -27,9 +27,24 @@ function! DoPrettyXML()
 endfunction
 command! PrettyXML call DoPrettyXML()
 
+autocmd FileType json hi def link jsonCommentError              Comment
+
 syntax on
 filetype plugin indent on
 execute pathogen#infect()
 nmap <Leader>s call SyntasticCheck
 
+:set shiftwidth=2
+let g:vim_json_syntax_conceal=0
 
+set modeline
+
+set hlsearch
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+
+" enable autocomplete when edit a new file
+set wildmenu
+set wildmode=list:longest
+
+" minimum 70% to focus window
+let &winheight = &lines * 7 / 10
