@@ -16,3 +16,4 @@ my .vim
 
 #Puppet-lint.rc
 You can use ~/.puppet-lint.rc to skip useless checks, check .puppet-lint.rc_exemple
+
