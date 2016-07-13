@@ -1,0 +1,20 @@
+snippet cron
+	"${1:name}": {
+		"ensure"      : "${2:present}",
+		"command"     : "${3:command} >/dev/null 2>&1",
+		"user"        : "${4:root}",
+		"minute"      : "${5:*}",
+		"hour"        : "${6:*}",
+		"environment" : "MAILTO=root@${7:foo.com}"
+	}
+snippet crons
+	"system::crontabs": {
+		"${1:name}": {
+			"ensure"      : "${2:present}"
+			"command"     : "${3:command} >/dev/null 2>&1",
+			"user"        : "${4:root}",
+			"minute"      : "${5:*}",
+			"hour"        : "${6:*}",
+			"environment" : "MAILTO=root@${7:foo.com}",
+		}
+	}
