@@ -42,6 +42,13 @@ set modeline
 set hlsearch
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
+" Enable snippets overrride.
+let g:snipMate = {}
+let g:snipMate.override = 1
+
+" Defining directory to extend template plugin. you can add multiple entries.
+let g:templates_directory = ['bundle/_myplugin/templates']
+
 " enable autocomplete when edit a new file
 set wildmenu
 set wildmode=list:longest
