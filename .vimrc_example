@@ -34,8 +34,11 @@ filetype plugin indent on
 execute pathogen#infect()
 nmap <Leader>s call SyntasticCheck
 
-:set shiftwidth=2
+:set shiftwidth=4
 let g:vim_json_syntax_conceal=0
+
+"set tabstop
+set tabstop=4 shiftwidth=4 expandtab
 
 set modeline
 
@@ -47,7 +50,9 @@ let g:snipMate = {}
 let g:snipMate.override = 1
 
 " Defining directory to extend template plugin. you can add multiple entries.
-let g:templates_directory = ['bundle/_myplugin/templates']
+let g:templates_directory=['~/.vim/bundle/_myplugin/templates']
+"overriden vim-template variables
+let g:email="Me <me@foo.com>"
 
 " enable autocomplete when edit a new file
 set wildmenu
@@ -55,3 +60,20 @@ set wildmode=list:longest
 
 " minimum 70% to focus window
 let &winheight = &lines * 7 / 10
+
+" setup eyaml to use yaml syntax highlighring
+au BufNewFile,BufRead *.eyaml setlocal ft=yaml
+
+"enabling folding
+set foldmethod=indent
+set foldenable
+set foldlevelstart=20
+
+"Coloring...
+colorscheme industry
+
+"Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"                                            
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
+
