@@ -29,3 +29,19 @@ function! GetPuppetNamespace()
         return name
     endif
 endfunction
+
+
+"eyaml section (forked from https://github.com/takeaway-com/vim-eyaml-encrypt)
+function EyamlEncrypt()
+  " Yank current or last selection to register x
+  normal! gv"xy
+
+  let shellcmd = 'eyaml encrypt --stdin 2>&1| grep "^string"  | cut -d" " -f2'
+  let output=system(shellcmd, @x)
+  " strip newlines from output and put in register x
+  let @x = substitute(output, '[\r\n]*$', '', '')
+  "re-select area and paste register x
+  normal! gv"xp
+endfunction
+
+map <Leader>e :call EyamlEncrypt() <CR>
