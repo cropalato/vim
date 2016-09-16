@@ -35,8 +35,11 @@ endfunction
 function EyamlEncrypt()
   " Yank current or last selection to register x
   normal! gv"xy
-
-  let shellcmd = 'eyaml encrypt --stdin 2>&1| grep "^string"  | cut -d" " -f2'
+  
+  let shellcmd = 'eyaml encrypt -o string --stdin 2> /dev/null'
+  if strridx(@x,'ENC[') > -1
+      let shellcmd = 'eyaml decrypt --stdin 2> /dev/null'
+  endif
   let output=system(shellcmd, @x)
   " strip newlines from output and put in register x
   let @x = substitute(output, '[\r\n]*$', '', '')
