@@ -1,0 +1,81 @@
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
+
+autocmd FileType json hi def link jsonCommentError              Comment
+
+syntax on
+filetype plugin indent on
+execute pathogen#infect()
+nmap <Leader>s call SyntasticCheck
+
+:set shiftwidth=4
+let g:vim_json_syntax_conceal=0
+
+"set tabstop
+set tabstop=4 shiftwidth=4 expandtab
+
+set modeline
+
+set hlsearch
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
+
+" Enable snippets overrride.
+let g:snipMate = {}
+let g:snipMate.override = 1
+
+" Defining directory to extend template plugin. you can add multiple entries.
+let g:templates_directory=['~/.vim/bundle/_myplugin/templates']
+"overriden vim-template variables
+let g:email="Me <me@foo.com>"
+
+" enable autocomplete when edit a new file
+set wildmenu
+set wildmode=list:longest
+
+" minimum 70% to focus window
+let &winheight = &lines * 7 / 10
+
+" setup eyaml to use yaml syntax highlighring
+au BufNewFile,BufRead *.eyaml setlocal ft=yaml
+
+"enabling folding
+set foldmethod=indent
+set foldenable
+set foldlevelstart=20
+
+"Coloring...
+colorscheme industry
+
+"Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"                                            
+let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
