@@ -5,5 +5,5 @@
 # description: 
 #
 class %PUPPETCLASS%() {
-  %HERE%
+    %HERE%
 }
