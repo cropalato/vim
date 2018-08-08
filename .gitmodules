@@ -58,3 +58,6 @@
 [submodule "bundle/vikube.vim"]
 	path = bundle/vikube.vim
 	url = https://github.com/c9s/vikube.vim
+[submodule "bundle/puppet-syntax-vim"]
+	path = bundle/puppet-syntax-vim
+	url = https://github.com/puppetlabs/puppet-syntax-vim
