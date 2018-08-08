@@ -55,3 +55,6 @@
 [submodule "bundle/vim-visual-increment"]
 	path = bundle/vim-visual-increment
 	url = https://github.com/triglav/vim-visual-increment.git
+[submodule "bundle/vikube.vim"]
+	path = bundle/vikube.vim
+	url = https://github.com/c9s/vikube.vim
