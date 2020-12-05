@@ -70,3 +70,9 @@
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/tablign"]
+	path = bundle/tablign
+	url = https://github.com/nschloe/tablign.git
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
