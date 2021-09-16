@@ -40,9 +40,6 @@
 [submodule "bundle/vim-easy-align"]
 	path = bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
-[submodule "bundle/vim-puppet"]
-	path = bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
 [submodule "bundle/vim-virtualenv"]
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
@@ -52,9 +49,6 @@
 [submodule "bundle/vikube.vim"]
 	path = bundle/vikube.vim
 	url = https://github.com/c9s/vikube.vim
-[submodule "bundle/puppet-syntax-vim"]
-	path = bundle/puppet-syntax-vim
-	url = https://github.com/puppetlabs/puppet-syntax-vim
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
