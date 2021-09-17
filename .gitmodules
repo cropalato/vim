@@ -70,3 +70,6 @@
 [submodule "bundle/vim-markdown-preview"]
 	path = bundle/vim-markdown-preview
 	url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule "bundle/puppet"]
+	path = bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
